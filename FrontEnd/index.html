@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <header>
@@ -17,7 +18,7 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li>login</li>
+			<a href="login.html"><li>login</li></a>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -35,7 +36,10 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="portfolio-header">
+			<h2>Mes Projets</h2>
+			<button id="editButton" class="edit-btn">Modifier</button>
+		</div>
 		<div class="filters"></div>
 		<div class="gallery"></div>
 	</section>
@@ -61,6 +65,32 @@
 		</ul>
 	</nav>
 </footer>
+
+<div id="modal" class="modal hidden">
+	<div class="modal-content">
+		<span id="closeModal">&times;</span>
+		<!-- Gallery -->
+		<div id="modalGalleryView">
+			<h3>Galerie photo</h3>
+			<div class="modal-gallery"></div>
+			<button id="openAddForm">Ajouter une photo</button>
+		</div>
+		<!-- Formulaire -->
+		<div id="modalAddView" class="hidden">
+			<span id="backToGallery">&larr;</span>
+			<h3>Ajouter une photo</h3>
+			<form id="addPhotoForm">
+				<input type="file" id="image" accept="image/*" required>
+				<input type="text" id="title" placeholder="Titre" required>
+				<select id="category" required></select>
+				<button type="submit">Valider</button>
+			</form>
+
+	</div>
+
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

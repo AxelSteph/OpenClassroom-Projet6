@@ -1,0 +1,108 @@
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+    background-color: #FFFEF8;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+header nav{
+    display: flex;
+    align-items: center;
+}
+header nav a {
+	text-decoration: none;
+	color: black;
+}
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	color: #B1663C;
+    font-weight: 800;
+}
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+.login-container {
+  padding: 40px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login-container h2 {
+  font-family: 'Syne';
+  font-weight: 700;
+  font-size: 30px;
+  color: #1D6154;
+}
+.login-container h2, .login-container p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+form button {
+  align-self: center;
+}
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  padding: 10px;
+  background-color: #1D6154;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  width: 50%;
+}
+button:hover {
+  background-color: #14463c;
+}
+p {
+  text-decoration: underline;
+}
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
