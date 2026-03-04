@@ -18,7 +18,7 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<a href="login.html"><li>login</li></a>
+			<li><a href="login.html" id="authLink">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -68,7 +68,10 @@
 
 <div id="modal" class="modal hidden">
 	<div class="modal-content">
-		<span id="closeModal">&times;</span>
+		<div class="modal-header">
+			<span id="backToGallery" class="hidden">&larr;</span>
+			<span id="closeModal">&times;</span>
+		</div>
 		<!-- Gallery -->
 		<div id="modalGalleryView">
 			<h3>Galerie photo</h3>
@@ -77,16 +80,34 @@
 		</div>
 		<!-- Formulaire -->
 		<div id="modalAddView" class="hidden">
-			<span id="backToGallery">&larr;</span>
 			<h3>Ajouter une photo</h3>
 			<form id="addPhotoForm">
-				<input type="file" id="image" accept="image/*" required>
-				<input type="text" id="title" placeholder="Titre" required>
+				<div class="image-upload">
+					<i class="fa-regular fa-image"></i>
+
+					<label for="image" class="upload-btn">
+					+ Ajouter photo
+					</label>
+
+					<input type="file" id="image" accept="image/*" hidden required>
+
+					<p>jpg, png : 4mo max</p>
+
+					<img id="imagePreview" class="hidden">
+				</div>
+
+				<label for="title">Titre</label>
+				<input type="text" id="title" required>
+
+				<label for="category">Catégorie</label>
 				<select id="category" required></select>
-				<button type="submit">Valider</button>
+
+				<button type="submit" id="submitBtn" disabled>
+					Valider
+				</button>
 			</form>
 
-	</div>
+		</div>
 
   </div>
 </div>
