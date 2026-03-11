@@ -237,7 +237,10 @@ footer nav ul {
   background-color: #1D6154;
   color: white;
 }
-
+.filters button.active {
+  background-color: #1D6154;
+  color: white;
+}
 /* Modale */
 .modal {
   position: fixed;

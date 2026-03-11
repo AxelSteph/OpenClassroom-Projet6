@@ -39,8 +39,15 @@ fetch("http://localhost:5678/api/categories")
     // Bouton Tous
     const allButton = document.createElement("button");
     allButton.innerText = "Tous";
+    allButton.classList.add("active");
     allButton.addEventListener("click", () => {
       displayWorks(worksData);
+      allButton.classList.add("active");
+      filtersDiv.querySelectorAll("button").forEach(btn => {
+        if (btn !== allButton) {
+          btn.classList.remove("active");
+        }
+      });
     });
     filtersDiv.appendChild(allButton);
 
@@ -54,6 +61,12 @@ fetch("http://localhost:5678/api/categories")
         const filteredWorks = worksData.filter(work =>
           work.categoryId === category.id
         );
+        button.classList.add("active");
+        filtersDiv.querySelectorAll("button").forEach(btn => {
+          if (btn !== button) {
+            btn.classList.remove("active");
+          }
+        });
         displayWorks(filteredWorks);
       });
 
@@ -132,6 +145,10 @@ function displayModalWorks() {
     deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
     deleteBtn.addEventListener("click", () => {
+      const confirmDelete = confirm("Voulez-vous vraiment supprimer cette photo ?");
+      if (!confirmDelete) {
+        return;
+      }
       deleteWork(work.id);
     });
 
@@ -314,7 +331,10 @@ form.addEventListener("submit", function (e) {
     document.getElementById("modalAddView").classList.add("hidden");
     document.getElementById("modalGalleryView").classList.remove("hidden");
     backToGallery.classList.add("hidden");
-
+    preview.src = "";
+    imageUpload.querySelector("i").style.display = "block";
+    imageUpload.querySelector("label").style.display = "block";
+    imageUpload.querySelector("p").style.display = "block";
   })
   .catch(error => {
     console.error(error);
